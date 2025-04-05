@@ -16,3 +16,6 @@ Este contenedor te permite correr Excalidraw localmente de forma simple, ideal p
 ```bash
 docker network create nointernal_home  # Solo si no existe
 docker compose up -d
+
+
+![Imagen](draw,png)
