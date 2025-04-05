@@ -35,7 +35,6 @@ Objetivo: reemplazar **todos** los servicios online posibles por soluciones **10
 | WhatsApp/Telegram  | Matrix + Element            | `matrix/`, `element/`|
 | Dropbox            | Nextcloud + Duplicati       | `nextcloud/`, `duplicati/` |
 | Netflix/Plex       | Jellyfin                    | `jellyfin/`          |
-| Google Analytics   | Umami / Plausible (WIP)     |                      |
 
 ---
 
@@ -93,6 +92,6 @@ Inspirado por [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome
 
 ---
 
-> **Mantenete libre, curioso y con el control de tus datos. Viva el self-hosting carajo.** 🔥
+> **Mantenete libre, curioso y con el control de tus datos. Viva el self-hosting .** 🔥
 
 ```
