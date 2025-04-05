@@ -2,6 +2,9 @@
 
 Este contenedor te permite correr Excalidraw localmente de forma simple, ideal para tomar notas o hacer esquemas rápidos.
 
+![Screenshot del container](draw.png)
+
+
 ## 🌐 Acceso
 
 - En tu navegador: `http://localhost:3030`
