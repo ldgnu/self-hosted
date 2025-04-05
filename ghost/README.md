@@ -1,59 +1,74 @@
+## ✍️ Ghost Blog – Self-hosted en Docker
 
-### ✅ `docker-compose.yml` limpio con variables
+Este stack te permite levantar tu propio blog personal usando [Ghost](https://ghost.org/), un CMS moderno y minimalista, completamente self-hosted, con soporte para publicaciones, membresías y más.
 
-```yaml
-version: '3.1'
-services:
+---
 
-  ghost-server:
-    image: ghost:latest
-    cap_add:
-      - CAP_SYS_NICE
-    security_opt:
-      - seccomp:unconfined
-    restart: always
-    ports:
-      - "2368"
-    depends_on:
-      - ghost-db
-    environment:
-      url: ${GHOST_URL}
-      database__client: mysql
-      database__connection__host: ghost-db
-      database__connection__user: ${MYSQL_USER}
-      database__connection__password: ${MYSQL_PASSWORD}
-      database__connection__database: ${MYSQL_DATABASE}
-    volumes:
-      - ./ghost/content:/var/lib/ghost/content
+### 🧱 Stack Tecnológico
 
-  ghost-db:
-    image: mysql:8
-    security_opt:
-      - seccomp:unconfined
-    restart: always
-    command: --default-authentication-plugin=mysql_native_password
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    volumes:
-      - ./ghost/mysql:/var/lib/mysql
+- **Ghost**: CMS rápido y liviano para blogging.
+- **MySQL**: Base de datos persistente para Ghost.
+- **Docker Compose**: Orquestación de servicios.
+- **.env file**: Gestión de variables sensibles fuera del código.
+
+---
+
+### 🚀 ¿Cómo levantar el servicio?
+
+1. **Cloná el repo o copiá esta carpeta**:
+
+```bash
+git clone https://github.com/ldgnu/self-hosted.git
+cd self-hosted/ghost
+```
+
+2. **Editá el archivo `.env` con tus datos**:
+
+```env
+GHOST_URL=http://blog.tudominio.com
+MYSQL_DATABASE=ghost
+MYSQL_USER=ghost_user
+MYSQL_PASSWORD=unaPassMuySegura123
+```
+
+3. **Levantá todo con Docker Compose**:
+
+```bash
+docker-compose up -d
+```
+
+4. **Accedé a tu blog en**:  
+👉 `http://localhost:2368` (o la URL que pusiste en `.env`)
+
+---
+
+### 📁 Estructura
+
+```bash
+ghost/
+├── docker-compose.yml
+├── .env
+├── content/              # Contenido persistente del blog
+└── mysql/                # Volumen de la base de datos
 ```
 
 ---
 
-### ✅ `.env` (para poner en la raíz del proyecto)
+### 🔐 Buenas prácticas de seguridad
 
-```dotenv
-# Ghost blog
-GHOST_URL=http://blog.tudominio.com.ar
+- ✅ **No guardes contraseñas en el YAML**: usá `.env` como hicimos.
+- 🔐 **Cambiá el usuario root** por un user dedicado (`ghost_user`).
+- 🔄 **Backup** regular del volumen de `ghost/mysql`.
+- 🔍 **Protegé tu instancia con un proxy inverso** (NGINX o Traefik con HTTPS).
+- 📦 Usá `cap_add` y `security_opt` para agregar protección extra (ya configurado).
 
-# MySQL config
-MYSQL_DATABASE=ghost
-MYSQL_USER=root
-MYSQL_PASSWORD=unaPassSegura123
-```
+---
 
-> ⚠️ Consejo J usá algo mejor que `root` como usuario si podés, por ejemplo `ghost_user`, y hacé que Ghost tenga solo acceso a su base, sin superpoderes.
+### 💡 Tips útiles
 
+- Usá [Admin de Ghost](https://ghost.org/docs/) para importar/exportar contenido.
+- Montá tu dominio con Cloudflare + Traefik/NGINX y sacale un Let's Encrypt.
+- Conectalo a un CDN para servir imágenes más rápido.
+- Hacé backup con herramientas como **Duplicati** o **Restic**.
+
+---
