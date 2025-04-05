@@ -1,6 +1,4 @@
----
 
-```markdown
 # 📰 FreshRSS - Self-Hosted RSS Reader
 
 ![FreshRSS Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Fresh-rss.svg/512px-Fresh-rss.svg.png)
