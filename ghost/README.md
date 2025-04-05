@@ -71,4 +71,3 @@ ghost/
 - Conectalo a un CDN para servir imágenes más rápido.
 - Hacé backup con herramientas como **Duplicati** o **Restic**.
 
----
