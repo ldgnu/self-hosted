@@ -133,6 +133,3 @@ Tu proyecto ya está versionado, subido, documentado y listo para la gloria.
 
 ---
 
-```
-
-¿Querés que te lo prepare como archivo `.md` para descargar o lo vas a copiar directo en tu repo? También lo puedo meter en un README extendido si querés que sea parte del proyecto FreshRSS.
