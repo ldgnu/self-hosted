@@ -5,7 +5,6 @@ Este contenedor te permite correr Excalidraw localmente de forma simple, ideal p
 ## 🌐 Acceso
 
 - En tu navegador: `http://localhost:3030`
-- Desde otros contenedores Docker: `http://draw`
 
 ## 🧠 Notas
 
