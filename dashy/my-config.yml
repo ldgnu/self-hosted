@@ -1,0 +1,167 @@
+pageInfo:
+  title: Hola, Javi
+  description: Home con mis servicios y accesos rápidos
+  logo: https://i.ibb.co/71WyyzM/little-bot-3.png
+  navLinks: []
+appConfig:
+  statusCheck: false
+  theme: colorful
+  fontAwesomeKey: c94dc2b452
+  customCss: '.clock p.time { font-size: 3rem !important; }'
+  layout: vertical
+  iconSize: large
+  language: es
+sections:
+  - name: Today
+    icon: far fa-smile-beam
+    displayData:
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: clock
+        id: 0_513_clock
+      - type: weather
+        options:
+          apiKey: efdbade728b37086877a5e83442004db
+          city: London
+        id: 1_513_weather
+      - type: crypto-watch-list
+        options:
+          currency: GBP
+          sortBy: marketCap
+          assets:
+            - bitcoin
+            - ethereum
+            - monero
+            - solana
+            - polkadot
+        id: 2_513_cryptowatchlist
+  - name: Productivity
+    icon: far fa-briefcase
+    items:
+      - title: Gmail
+        description: Primary email account
+        icon: favicon
+        url: http://www.gmail.com
+        hotkey: 1
+        tags:
+          - hosted
+          - personal
+          - email
+          - mail
+        id: 0_1302_gmail
+      - title: Outlook
+        description: Secondary email account
+        icon: favicon
+        url: https://outlook.com
+        hotkey: 2
+        tags:
+          - hosted
+          - personal
+          - email
+          - mail
+        id: 1_1302_outlook
+      - title: Bitwarden
+        description: Password Manager
+        icon: favicon
+        url: https://vault.bitwarden.com/#/vault
+        hotkey: 9
+        tags:
+          - hosted
+          - personal
+          - passwords
+        id: 2_1302_bitwarden
+  - name: Self Hosted
+    icon: far fa-code
+    items:
+      - title: Mi Buscador
+        icon: favicon
+        url: https://buscar.solisjavier.com.ar
+        id: 0_1041_mibuscador
+      - title: Uptime Kuma
+        icon: favicon
+        url: https://control.solisjavier.com.ar
+        id: 1_1041_uptimekuma
+      - title: 'Solis Javier - Website '
+        description: ''
+        icon: favicon
+        url: https://solisjavier.com.ar/
+        id: 2_1041_solisjavierwebsite
+      - title: CloudFlare
+        icon: favicon
+        url: https://dash.cloudflare.com/
+        statusCheckAcceptCodes: '403'
+        id: 3_1041_cloudflare
+      - title: Guardar - Wallabag
+        icon: favicon
+        url: https://guardar.solisjavier.com.ar/
+        id: 4_1041_guardarwallabag
+      - title: Webdav
+        description: ''
+        icon: favicon
+        url: http://ldgnu.duckdns.org:7050/
+        id: 5_1041_webdav
+      - title: Mi Buscador
+        icon: favicon
+        url: https://buscar.solisjavier.com.ar
+        id: 6_1041_mibuscador
+      - title: Hack the Box
+        icon: favicon
+        url: https://www.hackthebox.com/home
+        id: 7_1041_hackthebox
+      - title: Documentation
+        subItems:
+          - title: JavaScript
+            url: https://developer.mozilla.org
+            icon: si-javascript
+            color: '#F7DF1E'
+          - title: TypeScript
+            url: https://www.typescriptlang.org/docs
+            icon: si-typescript
+            color: '#3178C6'
+          - title: Svelt
+            url: https://svelte.dev/docs
+            icon: si-svelte
+            color: '#FF3E00'
+          - title: Go
+            url: https://go.dev/doc
+            icon: si-go
+            color: '#00ADD8'
+          - title: Rust
+            url: https://doc.rust-lang.org/reference
+            icon: si-rust
+            color: '#000000'
+          - title: Docker
+            url: https://docs.docker.com/
+            icon: si-docker
+            color: '#2496ED'
+        id: 8_1041_documentation
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+  - name: Social & News
+    icon: far fa-thumbs-up
+    items:
+      - title: YouTube
+        icon: si-youtube
+        url: https://youtube.com/
+        id: 0_1118_youtube
+      - title: Twitter
+        icon: si-twitter
+        url: https://twitter.com/
+        id: 1_1118_twitter
+      - title: Whatsapp
+        icon: si-whatsapp
+        url: https://web.whatsapp.com/
+        id: 2_1118_whatsapp
+      - title: Reddit
+        icon: si-reddit
+        url: https://www.reddit.com/
+        id: 3_1118_reddit
+      - title: FreshRss
+        icon: si-freshrss
+        url: https://rss.solisjavier.com.ar
+        id: 4_1118_freshrss

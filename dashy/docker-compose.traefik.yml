@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  dashy:
+    networks:
+      proxy:
+        ipv4_address: 172.19.0.16
+networks:
+  proxy:
+    external: true
