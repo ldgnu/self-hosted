@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  freshrss:
+    image: linuxserver/freshrss:latest
+    container_name: freshrss
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
+    ports:
+      - 8989:80
